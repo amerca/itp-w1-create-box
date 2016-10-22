@@ -1,14 +1,23 @@
 """This is the entry point of the program."""
 
 
-def create_box(height, width, character):
+def create_box(height, width, character, border_only = False):
     x=''
     for i in range(0,height):
-        for j in range(0,width):
-            x+=character
+        if i ==0 or i==height-1:
+                x+=character*width
+                x+='\n'
         else:
-            x+='\n'
+
+            for j in range(0,width):
+                if border_only and j>=1 and j!=width-1:
+                    x+=' '
+                else:
+                    x+=character
+            else:
+                x+='\n'
     return x
+
 
 
 if __name__ == '__main__':
