@@ -2,6 +2,8 @@
 
 
 def create_box(height, width, character, border_only = False):
+    if height <1 or width<1:
+        raise Error
     x=''
     for i in range(0,height):
         if i ==0 or i==height-1:
